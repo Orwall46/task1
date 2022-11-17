@@ -33,7 +33,7 @@ df = pd.DataFrame(data_base)
 #                     .astype(int)).groupby('customer_id')['session'].cumsum() + 1
 
 
-def add_sessions(data):
+def add_sessions(data: pd.DataFrame) -> pd.DataFrame:
     '''Получаем DataFrame, проверяем и добавляем новую колонку'''
     if not isinstance(data, pd.DataFrame):
         return print('data will be pandas DataFrame')
