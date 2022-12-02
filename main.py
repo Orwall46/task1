@@ -45,7 +45,7 @@ def add_sessions(data: pd.DataFrame) -> pd.DataFrame:
     data['session'] = data.groupby('customer_id')['timestamp'].transform(
                     lambda x: x.diff().gt('3Min').cumsum()
                     )
-    return print(data)
+    return data
 
 
 add_sessions(df)
